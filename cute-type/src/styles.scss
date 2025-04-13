@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Variables globales
+:root {
+  --sanrio-pink: #FF69B4;
+  --sanrio-light-pink: #FFB6C1;
+  --sanrio-white: #FFFFFF;
+  --sanrio-blue: #89CFF0;
+  --sanrio-yellow: #FFD700;
+  --font-kawaii: 'Segoe UI', 'Helvetica', sans-serif;
+}
+
+// Styles globaux
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-kawaii);
+  background-color: var(--sanrio-light-pink);
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Animations globales
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+// Classes d'utilité
+.kawaii-container {
+  background-color: var(--sanrio-white);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 15px;
+}
+
+.kawaii-button {
+  background-color: var(--sanrio-pink);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: darken(#FF69B4, 10%);
+    transform: scale(1.05);
+  }
+}
+
+.kawaii-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+// Animations pour les éléments interactifs
+.kawaii-interactive {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    animation: bounce 0.5s infinite;
+  }
+}

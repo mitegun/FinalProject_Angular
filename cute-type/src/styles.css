@@ -1,0 +1,22 @@
+:root {
+  --sanrio-pink: #ff69b4;
+  --sanrio-light-pink: rgba(255, 105, 180, 0.2);
+  --sanrio-dark-pink: #ff1493;
+  --sanrio-purple: #9370db;
+  --sanrio-yellow: #ffd700;
+  --sanrio-blue: #87ceeb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffd1dc;
+  min-height: 100vh;
+} 

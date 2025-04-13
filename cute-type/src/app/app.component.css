@@ -1,0 +1,27 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd1dc, #ffe6ea);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: #ff69b4;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+  margin-bottom: 2rem;
+  font-family: 'Comic Sans MS', cursive;
+  letter-spacing: 2px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+} 

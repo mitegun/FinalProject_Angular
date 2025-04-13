@@ -1,0 +1,135 @@
+.game-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .stats {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--sanrio-white);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.2);
+  }
+
+  .stat-item {
+    text-align: center;
+
+    .stat-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--sanrio-pink);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}
+
+.typing-area {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.15);
+  margin-bottom: 2rem;
+  position: relative;
+
+  .text-display {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    min-height: 100px;
+
+    span {
+      transition: all 0.2s ease;
+
+      &.current {
+        background-color: var(--sanrio-light-pink);
+        border-radius: 3px;
+      }
+
+      &.correct {
+        color: var(--sanrio-pink);
+      }
+
+      &.incorrect {
+        color: #ff4444;
+        text-decoration: underline wavy #ff4444;
+      }
+    }
+  }
+
+  .typing-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.kawaii-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  opacity: 0.2;
+  pointer-events: none;
+  
+  .kawaii-character {
+    width: 150px;
+    height: auto;
+    transform: rotate(-15deg);
+  }
+}
+
+// Animations
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.current {
+  animation: blink 1s infinite;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .game-container {
+    margin: 1rem;
+  }
+
+  .game-header .stats {
+    gap: 1rem;
+  }
+
+  .typing-area {
+    padding: 1rem;
+  }
+
+  .text-display {
+    font-size: 1.1rem;
+  }
+
+  .kawaii-decoration {
+    display: none;
+  }
+} 

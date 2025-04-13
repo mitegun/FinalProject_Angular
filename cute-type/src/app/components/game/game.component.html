@@ -1,0 +1,53 @@
+<div class="game-container kawaii-container">
+  <div class="game-header">
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">WPM</span>
+        <span class="stat-value">{{ currentWPM }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Précision</span>
+        <span class="stat-value">{{ accuracy }}%</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Temps</span>
+        <span class="stat-value">{{ timer }}s</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="typing-area" [class.game-active]="isGameActive">
+    <div class="text-display" [class.error]="hasError">
+      <span *ngFor="let char of displayText; let i = index"
+            [class.current]="i === currentIndex"
+            [class.correct]="typedText[i] === char"
+            [class.incorrect]="typedText[i] !== undefined && typedText[i] !== char">
+        {{ char }}
+      </span>
+    </div>
+    
+    <input #typeInput
+           class="typing-input"
+           [class.hidden]="!isGameActive"
+           (input)="onInput($event)"
+           (keydown)="onKeyDown($event)"
+           [disabled]="!isGameActive"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false">
+  </div>
+
+  <div class="game-controls">
+    <button class="kawaii-button" (click)="startGame()" *ngIf="!isGameActive">
+      Commencer
+    </button>
+    <button class="kawaii-button" (click)="restartGame()" *ngIf="isGameActive">
+      Recommencer
+    </button>
+  </div>
+
+  <div class="kawaii-decoration">
+    <img src="assets/hello-kitty.png" alt="Hello Kitty" class="kawaii-character">
+  </div>
+</div> 
